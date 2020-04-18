@@ -9,7 +9,9 @@
     </bean>
     <bean id="musicPlayer"
           class="ru.anton.springcourse.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+          <property name="music" ref="musicBean"/>
+        <!--       <constructor-arg ref="musicBean"/>
+       -->
     </bean>
 
 </beans>
