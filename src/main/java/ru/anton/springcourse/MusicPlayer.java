@@ -1,21 +1,25 @@
 package ru.anton.springcourse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class MusicPlayer {
-private List<Music> musicList = new ArrayList<>();
-private Music music;
+//private List<Music> musicList = new ArrayList<>();
+private ClassicalMusic music;
 private String name;
 private int volume;
 
 
 //IoC
-    public MusicPlayer(Music music) {
+    @Autowired
+    public MusicPlayer(ClassicalMusic music) {
         this.music = music;
     }
     public MusicPlayer(){};
-    public void setMusic(Music music){
+    public void setMusic(ClassicalMusic music){
         this.music = music;
     }
     public void playMusic(){
@@ -37,7 +41,7 @@ private int volume;
     public void setVolume(int volume) {
         this.volume = volume;
     }
-    public void setMusicList(List<Music> musicList) {
+ /*   public void setMusicList(List<Music> musicList) {
         this.musicList = musicList;
     }
 
@@ -45,5 +49,5 @@ private int volume;
         for(Music music : musicList) {
             System.out.println("Playing: " + music.getSong());
         }
-    }
+    }*/
 }
